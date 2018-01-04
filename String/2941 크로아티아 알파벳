@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+char a[10000001];
+char n[4] = { '=', '-' };
+int main(){
+	scanf("%s", a);
+	int len = strlen(a);
+	int res = len;
+	for (int i = 0; i < len; i++){
+		if (a[i] == 'l' || a[i] == 'n'){
+			if (a[i + 1] == 'j'){
+				res--;
+				i++;
+			}
+		}
+		if (a[i] == n[0] || a[i] == n[1]){
+			if (a[i - 2] == 'd' && a[i-1] == 'z') res--;
+			res--;
+		}
+	}
+	printf("%d", res);
+}
