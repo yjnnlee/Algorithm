@@ -36,7 +36,7 @@ int main() {
 		F f(b);
 		while (1) {
 			scanf(" %c", &e);
-//			if (e == 'O') break;
+			if (e == 'O') break;
 			if (e == 'E') {
 				scanf("%d", &c);
 				f.find(c);
@@ -46,7 +46,6 @@ int main() {
 				scanf("%d%d", &c, &d);
 				f.merge(c, d);
 			}
-			else break;
 		}
 	}
 }
