@@ -16,10 +16,10 @@ void dfs(int x, int y) {
 
 int main() {
 	scanf("%d", &t);
-	for (int i = 0; i < t; i++) {
+	for (int i = 0; i < t; i++) { // while(t--) {
 		cnt = 0, memset(map, 0, sizeof(map));
 		scanf("%d%d%d", &x, &y, &k);
-		for (int j = 0; j < k; j++) {
+		for (int j = 0; j < k; j++) { //while(k--){ 로 하면 가독성 좋아짐
 			scanf("%d%d", &a, &b);
 			map[++a][++b] = 1;
 		}
