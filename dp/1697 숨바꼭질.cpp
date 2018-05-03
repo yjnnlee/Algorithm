@@ -33,3 +33,33 @@ int main() {
 		printf("%d", d[k]);
 	}
 }
+
+//망한코드
+//#include <stdio.h>
+//#include <queue>
+//#include <memory.h>
+//using namespace std;
+//
+//int a, b, cnt= 0;
+//
+//int main() {
+//	scanf("%d%d", &a, &b);
+//	while (1) {
+//		if (a == b) break;
+//		cnt++;
+//		if (a * 2 <= b) {
+//			a *= 2;
+//		}
+//		else {
+//			if ((abs(b - ((a - 1) * 2)) < abs(b - ((a + 1) * 2))) &&
+//				((a - 1) * 2 < b || (a + 1) * 2) < b) a--;
+//			else if ((abs(b - ((a - 1) * 2)) > abs(b - ((a + 1) * 2))) &&
+//				((a - 1) * 2 < b || (a + 1) * 2) < b) a++;
+//			else if (abs(b - (a - 1)) < abs(b - (a + 1))) {
+//				a--;
+//			}
+//			else a++;
+//		}
+//	}
+//	printf("%d", cnt);
+//}
