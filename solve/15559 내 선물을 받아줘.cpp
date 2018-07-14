@@ -1,7 +1,7 @@
 #include <stdio.h>
 int n, m, chk[1005][1005];
 char a[1005][1005];
-int c = 1, res=0, y, x;
+int c = 1, res = 0, y, x;
 void f(int i, int j) {
 	y = i, x = j;
 	if (chk[y][x]) return;
@@ -44,8 +44,16 @@ int main() {
 		for (int j = 0; j < m; j++) {
 			if (chk[i][j]) continue;
 			f(i, j);
-			//ff(i,j); 도 
-			res += chk[y][x] == c++;
+			//ff(i,j); 도 가능
+
+			res += chk[y][x] == c++; //이것의 의미는
+			//res += (chk[y][x] == c++); 과 같고
+			/*if (chk[i][j] == c) {
+				res++;
+			}
+			c++; 랑 같다
+			우변부터 계산해서 참이면 1이라 1더해줌
+			*/
 		}
 	}
 	printf("%d", res);
