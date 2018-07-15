@@ -1,5 +1,5 @@
 #include <stdio.h>
-int month[] = { 31,29,31,30,31,30,31,31,30,31,30,31 };
+int month[] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
 char *day[] = { "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT" };
 int a, b;
 int main(){
