@@ -2,11 +2,13 @@
 #include <vector>
 using namespace std;
 int month[] = {31,29,31,30,31,30,31,31,30,31,30,31};
-char *day[] = {"THU", "FRI", "SAT", "SUN", "MON", "TUE","WED" };
+char *day[] = {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"};
 
-string solution(int a, int b) {
-    for(int i=0;i<a-1;i++){
-        b+=month[i];
+int days=0;
+string solution(int m, int d) {
+    for(int i=0;i<m-1;i++){
+        days+=month[i];
     }
-    return day[b%7];
+    days+= d+4;
+    return day[days%7];
 }
