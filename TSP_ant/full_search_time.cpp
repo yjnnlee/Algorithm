@@ -15,7 +15,7 @@ char *s;
 
 int tsp(vector<int> &go, vector<bool> &visited, int nowLen) {
 	if (go.size() == n) {
-		return nowLen + w[go.back()][go[0]]; //´Ù ¹æ¹®ÇßÀ¸¸é Ã³À½À¸·Î
+		return nowLen + w[go.back()][go[0]]; //ë‹¤ ë°©ë¬¸í–ˆìœ¼ë©´ ì²˜ìŒìœ¼ë¡œ
 	}
 
 
@@ -56,8 +56,8 @@ int main() {
 		QueryPerformanceFrequency(&Frequency);
 		QueryPerformanceCounter(&BeginTime);
 
-		vector<bool> visited(n); //¹æ¹®Çß´ÂÁö
-		vector<int> go(1, 0); //¿©ÇàÇÏ´Â °æ·Î
+		vector<bool> visited(n); //ë°©ë¬¸í–ˆëŠ”ì§€
+		vector<int> go(1, 0); //ì—¬í–‰í•˜ëŠ” ê²½ë¡œ
 
 		visited[0] = true;
 		printf("%d\n", tsp(go, visited, 0));
