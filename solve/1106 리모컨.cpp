@@ -3,8 +3,18 @@
 #include <stdlib.h>
 #include <algorithm>
 using namespace std;
-int n, m, button, num[] = { 1,1,1,1,1,1,1,1,1,1}, len;
+int n, m, button, num[] = { 1,1,1,1,1,1,1,1,1,1}, len, maxres = 1e9, tmp;
 char nn[500005];
+
+int length(int num) {
+	if (num == 0) return 1;
+	int cnt = 0;
+	while (num) {
+		num /= 10;
+		cnt++;
+	}
+	return cnt;
+}
 int main() {
 	scanf("%d%d", &n, &m);
 	for (int i = 0; i < m; i++) {
@@ -14,10 +24,14 @@ int main() {
 	sprintf(nn, "%d", n);
 	len = strlen(nn);
 	for (int i = 0; i < len; i++) {
-		int min = 0; //제일 가까운 수
 		for (int j = 0; j <= 9; j++) {
 			if (num[j] == 0) continue;
-			if (abs(j - atoi(nn)) < min) min = j;
+			int click = abs(j - atoi(nn)); //+와 -를 몇 번 눌러야 가장 가까워지는지
+			if (click < maxres) {
+				maxres = click;
+				tmp = i;
+			}
 		}
+
 	}
 }
