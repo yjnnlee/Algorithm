@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <algorithm>
 using namespace std;
-int n, k, w[101], v[101], memo[101][101];
+int n, k, w[101], v[101], memo[101][100001];
 
 int f(int i, int j) {
 	int res;
