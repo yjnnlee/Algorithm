@@ -22,3 +22,10 @@ int main() {
 	}
 	cout << res;
 }
+
+/*
+https://www.acmicpc.net/board/view/22414
+
+99까지의 한수는 총 99개
+1000까지의 한수는 총 144개
+*/
