@@ -59,4 +59,5 @@ int main() {
 }
 //https://www.acmicpc.net/blog/view/88
 //https://m.blog.naver.com/PostView.nhn?blogId=jh05013&logNo=221475142152&proxyReferer=https%3A%2F%2Fwww.google.com%2F
-//https://www.acmicpc.net/blog/view/88
+//https://www.acmicpc.net/source/18343116 인덱스 버전
+//https://www.acmicpc.net/source/12903849 펜윅 버전
