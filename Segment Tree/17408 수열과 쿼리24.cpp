@@ -22,22 +22,20 @@ void init(vector<int>& tree, vector<int>& a, int start, int end, int node) {
     }
 }
 
-void update(vector<int>& tree, vector<int> &a, int start, int end, int node, int index, int diff) {
+void update(vector<int>& tree, vector<int>& a, int start, int end, int node, int index, int diff) {
     if (index < start || end < index) return;
-    else if (start == end) {
+    if (start == end) {
         a[index] = diff;
         tree[node] = start;
         return;
     }
-    if (start != end) {
-        update(tree, a, start, (start + end) / 2, node * 2, index, diff);
-        update(tree, a, (start + end) / 2 + 1, end, node * 2+1, index, diff);
-        if (a[tree[node * 2]] > a[tree[node * 2 + 1]]) {
-            tree[node] = tree[node * 2];
-        }
-        else {
-            tree[node] = tree[node * 2 + 1];
-        }
+    update(tree, a, start, (start + end) / 2, node * 2, index, diff);
+    update(tree, a, (start + end) / 2 + 1, end, node * 2 + 1, index, diff);
+    if (a[tree[node * 2]] > a[tree[node * 2 + 1]]) {
+        tree[node] = tree[node * 2];
+    }
+    else {
+        tree[node] = tree[node * 2 + 1];
     }
 }
 
@@ -83,7 +81,7 @@ int main() {
             b--, c--;
             int res = 0;
             int mid = findmax(tree, a, 0, n - 1, b, c, 1);
-            if (b <= mid - 1) {
+            if (mid - 1 >= b) {
                 int mid2 = findmax(tree, a, 0, n - 1, b, mid - 1, 1);
                 res = max(res, a[mid] + a[mid2]);
             }
