@@ -18,12 +18,12 @@ signed main() {
 			if (mid < v[i]) sum += mid; //상한액 이상이면 상한액만
 			else sum += v[i]; //상한액 이하면 금액 전체
 		}
-		if (sum <= totalhave) { //예산보다 전체합-상한액 이상합이 크면
+		if (sum <= totalhave) { //상한액 기준 예산합이 전체 예산보다 작으면
 			res = mid;
-			l = mid + 1; //상한액을 높게 잡아서 덜 잡는다
+			l = mid + 1; //상한액을 높게 잡아서 더 잡는다
 		}
 		else {
-			r = mid - 1; //예산보다 작으면 상한액을 낮게 잡아서 더 잡는다
+			r = mid - 1; //예산보다 크면 상한액을 낮게 잡아서 덜 잡는다
 		}
 	}
 	cout << res;
