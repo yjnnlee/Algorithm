@@ -85,7 +85,7 @@ int main() {
                 int mid2 = findmax(tree, a, 0, n - 1, b, mid - 1, 1);
                 res = max(res, a[mid] + a[mid2]);
             }
-            else if (mid + 1 <= c) {
+            if (mid + 1 <= c) { //mid를 찾았는데, mid2는 mid의 왼쪽에 있을 수도 있고, 오른쪽에 있을 수도 있기 때문에 if, if로 나눈다!!
                 int mid2 = findmax(tree, a, 0, n - 1, mid + 1, c, 1);
                 res = max(res, a[mid] + a[mid2]);
             }
