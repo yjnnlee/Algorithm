@@ -22,7 +22,7 @@ void go(int a[], int now, int cnt) {
 		return;
 	}
 
-	if (a[now - 1] == want[now - 1]) { //스위치를 안 누른 경우 두 값은 같다
+	if (a[now - 1] == want[now - 1]) { //스위치를 안 누른 경우
 		go(a, now + 1, cnt);
 	}
 	for (int i = now - 1; i <= now + 1; i++) { //스위치를 누른 경우 3개를 바꾼다
