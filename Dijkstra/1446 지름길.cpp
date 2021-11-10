@@ -6,7 +6,7 @@ using namespace std;
 int n, goal;
 /*
 지름길
-1. 그냥 가는 것이 지름길보다 짧으면 그냥 간다 -> 입력 받을 때 처리
+1. 그냥 가는 것이 지름길보다 같거나 짧으면 그냥 간다 -> 입력 받을 때 처리
 2. 가능한 지름길이 여러 개면 더 짧은 거리로 간다
 3. 지름길의 목적지가 도착지점을 넘으면 지름길을 이용할 수 없다 -> 입력 받을 때 처리
 
@@ -26,7 +26,7 @@ int main() {
 	for (int i = 0;i < n;i++) {
 		int s, e, cost;
 		cin >> s >> e >> cost;
-		if (e - s < cost) continue; //1번 예외
+		if (e - s <= cost) continue; //1번 예외
 		if (e > goal) continue;; //3번 예외
 		g[s].push_back({ e, cost });
 	}
