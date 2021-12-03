@@ -19,7 +19,6 @@ int main() {
 	stringstream ss(s);
 	string token;
 	vector<string> num;
-
 	while (getline(ss, token, ' ')) {
 		if (token != "") {
 			num.push_back(token);
@@ -31,20 +30,24 @@ int main() {
 	for(auto x: num){
 		if (x == "B") {
 			if (!before.empty()) {
+				if (now - 1 <= 0) continue; //0이하면 패스
 				//cout << "B: " << now - 1 << " Add: " << before[now - 1] << endl;
-				page[before[--now]]++;
+				
+				page[before[--now]]++; //페이지 증가
 				isBack = true;
 			}
 		}
 		else if (x == "F") {
 			if (!before.empty() && now < before.size() - 1) {
-				//for (auto go : before) {
-				//	cout << go << " ";
-				//}cout << endl;
+				/*for (auto go : before) {
+					cout << go << " ";
+				}cout << endl;*/
 				//cout << "before size: " << before.size() << endl;
-				before.erase(before.begin() + now + 1, before.begin() + before.size() - 1); //now~점프한 숫자 사이 원소들 삭제
 
+				//now~점프한 숫자 사이 원소들 삭제
+				before.erase(before.begin() + now + 1, before.begin() + before.size() - 1); 
 				//cout << "F " << now + 1 << " Add: " << before[now + 1] << endl;
+
 				page[before[++now]]++;
 				isJump = true;
 			}
@@ -79,6 +82,15 @@ int main() {
 
 	cout << answer;
 }
+
 /*
+input
 1 2 3 4 B B 42 B F F
+output
+3
+
+input
+1 10 B B 20 1 F B B
+output
+4
 */
